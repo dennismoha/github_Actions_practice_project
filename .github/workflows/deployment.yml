@@ -18,4 +18,4 @@ jobs:
       - name: run the test
         run:  npm run test
       - name: deploy
-        run:  echo "deploying on push ...""
+        run:  echo "deploying on push ..."
