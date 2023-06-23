@@ -1,55 +1,21 @@
-# name: "linter deployment workflow"
-# on: 
-#   push
-# jobs: 
-#   build:
-#     runs-on: ubuntu-latest
-#     steps:
-#       - name: Get code
-#         uses: actions/checkout@v3
-#       - name: install nodejs
-#         uses: actions/setup-node@v3
-#         with:
-#           node-version: 18
-#       - name: install dependencies
-#         run:  npm ci
-#       - name: run the linter
-#         run:  npm run lint
-#       - name: run the test
-#         run:  npm run test
-#       - name: deploy
-#         run:  echo "deploying on push ...""
-
-name: "deploy Project"
-on: [push, workflow_dispatch]
-jobs:
-  test:
+name: "linter deployment workflow"
+on: 
+  push
+jobs: 
+  build:
     runs-on: ubuntu-latest
     steps:
-      - name: Get Code
+      - name: Get code
         uses: actions/checkout@v3
-      - name: install NodeJs
+      - name: install nodejs
         uses: actions/setup-node@v3
-        with: 
+        with:
           node-version: 18
       - name: install dependencies
         run:  npm ci
-      - name: Run tests
-        run:  npm test
-  deploy:
-    needs: [test]
-    runs-on: ubuntu-latest
-    steps:
-      - name: Get Code
-        uses: actions/checkout@v3
-      - name: install NodeJs
-        uses: actions/setup-node@v3
-        with: 
-          node-version: 18
-      - name: install dependencies
-        run:  npm ci
-      - name: Build Project
-        run:  npm run build
-      - name: Deploy
-        run : echo "deploying...."
-
+      - name: run the linter
+        run:  npm run lint
+      - name: run the test
+        run:  npm run test
+      - name: deploy
+        run:  echo "deploying on push ...""
