@@ -1,4 +1,4 @@
-name: "linter deployment workflow"
+name: "sequential deployment workflow"
 on: 
   push
 jobs:   
