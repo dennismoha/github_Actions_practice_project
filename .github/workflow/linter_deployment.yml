@@ -1,11 +1,12 @@
-name: linter deployment workflow
+name: "linter deployment workflow"
 on: 
   push
 jobs: 
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - name: Get code
+        uses: actions/checkout@v3
       - name: install nodejs
         uses: actions/setup-node@v3
         with:
@@ -17,4 +18,6 @@ jobs:
       - name: run the test
         run:  npm run test
       - name: deploy
-        run:  echo deploying on push ...
+        run:  echo "deploying on push ...""
+
+
