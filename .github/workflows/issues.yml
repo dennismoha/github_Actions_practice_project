@@ -1,7 +1,5 @@
 name: Handle issue
-on: 
-    issues:
-        types: [opened, edited]
+on: issues        
 jobs:
     issue:
         runs-on: ubuntu-latest
